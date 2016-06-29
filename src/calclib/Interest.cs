@@ -4,7 +4,7 @@ namespace DotnetSPA
 {
     public class InterestCalculator
     {
-        public double GetFinalBalance(double originalBalance, double interestRate, int years)
+        public static double GetFinalBalance(double originalBalance, double interestRate, int years)
         {
             if (originalBalance < 0)
             {

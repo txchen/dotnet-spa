@@ -14,7 +14,12 @@ In this example, it will cover:
 * tune `.editorconfig` and `.gitignore`
 * create dir `src` and `test`
 * cretea `calclib` and `calcapi` under `src`
-* in `calclib`, run `dotnet new -t lib`
+* under `calclib`, run `dotnet new -t lib`, and write a simple library
+* create dir `calclib-test` under `test`
+* under `calclib-test`, run `dotnet new -t xunittest`
+* update `project.json`, add dependency to calclib, in current project, also include xunit dependencies
+* write unit tests
+* `dotnet restore` then `dn test test/calclib-test`
 
 ### References
 * [Tutorial on dotnet docs site](https://docs.microsoft.com/en-us/dotnet/articles/core/tutorials/using-on-macos)
