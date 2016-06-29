@@ -3,6 +3,8 @@ Hello world of aspnet mvc webapi + vue.
 
 Dotnet core 1.0 is finally shipped, and I am considering to use that as my main stack in the future. I don't use razor to generate html in server side, instead, I use c# to write backend api and use javascript to write the web UI.
 
+My working environment now is mac OSX, so I don't use visual studio. Currently I am using vscode, it is not as powerful as VS, but already enough to me.
+
 In this example, it will cover:
 * multiple projects in `src`
 * unittest with xUnit
