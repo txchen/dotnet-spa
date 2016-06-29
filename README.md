@@ -27,6 +27,7 @@ In this example, it will cover:
 * add tool dotnet watch: https://github.com/aspnet/dotnet-watch
 * add dependency to calclib, and add the logic
 * to run the webapi, cd to `src/calcapi`, run `dotnet watch run`, then test the api.
+* add package.json, add some helper scripts, run with `npm run`
 
 ### References
 * [Tutorial on dotnet docs site](https://docs.microsoft.com/en-us/dotnet/articles/core/tutorials/using-on-macos)

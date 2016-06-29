@@ -1,0 +1,11 @@
+{
+  "name": "dotnet-spa",
+  "devDependencies": {
+  },
+  "scripts": {
+    "watch": "cd src/calcapi && dotnet watch run",
+    "test": "dotnet test test/calclib-test"
+  },
+  "dependencies": {
+  }
+}
