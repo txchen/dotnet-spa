@@ -4,8 +4,8 @@ var webpack = require('webpack')
 module.exports = {
   entry: './fe-src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: 'src/calcapi/wwwroot/dist/',
+    path: path.resolve(__dirname, './src/calcapi/wwwroot/dist'),
+    publicPath: '/dist/',
     filename: 'build.js'
   },
   resolveLoader: {
@@ -42,7 +42,13 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    port: 18000,
+    inline: true,
+    contentBase: 'src/calcapi/wwwroot',
+    proxy: {
+      '/api': 'http://localhost:5000/',
+    },
   },
   devtool: '#eval-source-map'
 }
