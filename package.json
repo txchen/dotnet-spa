@@ -10,6 +10,7 @@
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.4",
     "json-loader": "^0.5.4",
+    "rimraf": "^2.5.2",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
@@ -22,7 +23,7 @@
     "bedev": "cd src/calcapi && dotnet watch run",
     "fedev": "webpack-dev-server --inline --hot",
     "test": "dotnet test test/calclib-test",
-    "publish": "cross-env NODE_ENV=production webpack --progress --hide-modules && dotnet build src/calcapi",
+    "publish": "rimraf publish && cross-env NODE_ENV=production webpack --progress --hide-modules && dotnet publish src/calcapi/project.json -o publish",
     "verifydist": "dotnet publish/calcapi.dll"
   },
   "dependencies": {

@@ -9,6 +9,13 @@ In this example, it will cover:
 * aspnet core webapi
 * webpack project hosted in aspnet net
 
+### How to run it
+* clone, of course
+* install dotnet core and nodejs on your machine
+* `dotnet restore`
+* `npm install`
+* `npm run` to list the available scripts, and enjoy!
+
 ### Steps to create this project
 * create global.json
 * tune `.editorconfig` and `.gitignore`
