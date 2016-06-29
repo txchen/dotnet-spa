@@ -47,7 +47,7 @@ module.exports = {
     inline: true,
     contentBase: 'src/calcapi/wwwroot',
     proxy: {
-      '/api': 'http://localhost:5000/',
+      '/api/*': 'http://localhost:5000/',
     },
   },
   devtool: '#eval-source-map'
