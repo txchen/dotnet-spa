@@ -11,6 +11,14 @@ In this example, it will cover:
 * aspnet core webapi
 * webpack project hosted in aspnet net
 
+And these are not covered, and might be covered in the future
+* authentication, especially social login
+* comprehensive logging solution
+* secret and configuration management
+* js app unit test
+* browser testing
+* docker image build
+
 ### How to run it
 * clone, of course
 * install dotnet core and nodejs on your machine
