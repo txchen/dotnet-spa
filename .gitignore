@@ -68,3 +68,6 @@ runtimes/
 .build/
 .testPublish/
 launchSettings.json
+
+src/calcapi/wwwroot/dist/
+publish/

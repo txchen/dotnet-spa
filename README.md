@@ -26,10 +26,14 @@ In this example, it will cover:
 * do some cleanup, we don't need everything in the template, e.g. remove IIS, gulp, bower and Docker related files
 * add tool dotnet watch: https://github.com/aspnet/dotnet-watch
 * add dependency to calclib, and add the logic
-* to run the webapi, cd to `src/calcapi`, run `dotnet watch run`, then test the api.
+* to run the webapi, cd to `src/calcapi`, run `dotnet watch run`, then test the api at `http://localhost:5000`.
 * add package.json, add some helper scripts, run with `npm run`
-
-* TODO: add frontend, webpack + vue based
+* now, add frontend part, create a vue project (I use vue-cli with webpack-simple), and move files into this project
+* put the js app source code in `fe-src`, modify the webpack.config.js
+* to develop: open 2 terminal windows: `npm run fedev` and `npm run bedev`. Two instances would watch source code in be and fe.
+* use `http://localhost:18000` in browser to test the app, api call would be proxied to `http://localhost:5000`
+* to build the application: run `npm run publish`, the final package can be found under `publish` dir
+* to verify the dist: run `npm run verifydist`
 
 ### References
 * [Tutorial on dotnet docs site](https://docs.microsoft.com/en-us/dotnet/articles/core/tutorials/using-on-macos)
