@@ -34,8 +34,10 @@ namespace DotnetSPAAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            // Configure the console logger by reading config file
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+            // this will enable logging to debug console, if level is not specified, Information is used.
+            loggerFactory.AddDebug(LogLevel.Debug);
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
