@@ -9,6 +9,9 @@
       "program": "${workspaceRoot}/src/calcapi/bin/Debug/netcoreapp1.0/calcapi.dll",
       "args": [],
       "cwd": "${workspaceRoot}",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
       "stopAtEntry": false
     },
     {
