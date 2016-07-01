@@ -10,11 +10,13 @@ In this example, it will cover:
 * unittest with xUnit
 * aspnet core webapi
 * webpack project hosted in aspnet net
+* use serilog to write structured log
+* configure serilog to write json to file
 
 And these are not covered, and might be covered in the future
 * authentication, especially social login
-* comprehensive logging solution
-* secret and configuration management
+* change minLogLevel in runtime
+* secret management
 * js app unit test
 * browser testing
 * docker image build

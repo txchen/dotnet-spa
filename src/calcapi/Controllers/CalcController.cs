@@ -26,11 +26,10 @@ namespace DotnetSPAAPI.Controllers
             {
                 _logger.LogTrace("I am trace");
                 _logger.LogDebug("I am debug");
-                _logger.LogInformation("I am info");
                 _logger.LogWarning("I am warning");
-                _logger.LogError("I am error");
-                _logger.LogCritical("I am critical");
-                return Ok(InterestCalculator.GetFinalBalance(balance, rate, years));
+                var result = InterestCalculator.GetFinalBalance(balance, rate, years);
+                _logger.LogInformation("Input: {Balance}, {Rate}, {Years} | Output: {Result}", balance, rate, years, result);
+                return Ok(result);
             }
             catch (ArgumentException ae)
             {

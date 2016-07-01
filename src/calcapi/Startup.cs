@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Core;
+using Serilog.Events;
+using Serilog.Formatting.Json;
 
 namespace DotnetSPAAPI
 {
@@ -36,8 +40,24 @@ namespace DotnetSPAAPI
         {
             // Configure the console logger by reading config file
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            // this will enable logging to debug console, if level is not specified, Information is used.
+            // this will enable logging to debug console, if no level is specified, Information is used.
             loggerFactory.AddDebug(LogLevel.Debug);
+
+            // Add serilog to pipeline, let it write structured log as json to file
+            //   In prod, consider using Seq or ElasticSearch, serilog has sinks to write to them.
+            var levelSwitch = new LoggingLevelSwitch(); // use levelSwitch so that we can change it dynamically
+            levelSwitch.MinimumLevel =  LogEventLevel.Information;
+            // To write structured log to file, use Serilog.Sinks.Json
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.ControlledBy(levelSwitch)
+                // currently override can be only done in code, not in json config file
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft.AspNetCore.Hosting.Internal.WebHost", LogEventLevel.Information)
+                .Enrich.FromLogContext() // add aspnet context to log
+                .Enrich.WithMachineName()
+                .WriteTo.JsonFile(path: "calcapi.log")
+                .CreateLogger();
+            loggerFactory.AddSerilog();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

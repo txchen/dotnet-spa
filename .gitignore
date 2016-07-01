@@ -71,3 +71,4 @@ launchSettings.json
 
 src/calcapi/wwwroot/dist/
 publish/
+calcapi.log
